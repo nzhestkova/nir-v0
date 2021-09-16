@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "test": "ng test",
     "postinstall": "ng build -c production"
   },
   "private": true,
