@@ -1,0 +1,39 @@
+<div *ngIf="{taskList: taskList$ | async} as observables"
+     class="task-list"
+>
+    <ng-container *ngFor="let task of observables.taskList">
+        <ng-container *ngTemplateOutlet="listViewTemplate; context: {task: task}"></ng-container>
+    </ng-container>
+</div>
+
+<ng-template #listViewTemplate
+             let-task="task">
+    <mat-card class="task-card">
+        <div class="task-card__list-view">
+            <div [className]="'task-card__list-view__icon ' + (task.type ?? 'default') + '-task-list-icon'"></div>
+            <span class="task-card__list-view__header">{{task.displayName}}</span>
+
+            <div class="task-card__list-view__configuration">
+                <div class="task-card__list-view__configuration-icon _counter"
+                >
+                    <span class="task-card__list-view__configuration-counter">{{task.configuration?.questionsCount}}</span>
+                </div>
+
+                <div class="task-card__list-view__configuration-icon"
+                     [class._timer]="task.configuration?.timeLimited"
+                     [class._timer-off]="!task.configuration?.timeLimited"
+                ></div>
+            </div>
+
+            <button class="task-card__list-view__run"></button>
+        </div>
+    </mat-card>
+</ng-template>
+
+<ng-template #expandedViewTemplate
+             let-task="task">
+    <mat-card>
+        <span>{{task.displayName}}</span>
+        <mat-card-subtitle>{{task.type}}</mat-card-subtitle>
+    </mat-card>
+</ng-template>

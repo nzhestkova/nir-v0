@@ -1,0 +1,24 @@
+[
+    {
+        "id": "5f8e038b-3c33-4e9f-b0d5-17206c9a3705",
+        "name": "chemical-001",
+        "type": "test",
+        "displayName": "Chemical Exam: Training Task",
+        "configuration": {
+            "dynamic": false,
+            "timeLimited": false,
+            "questionsCount": 15
+        }
+    },
+    {
+        "id": "f4f12ef6-4729-48ca-a846-6f579a975fdc",
+        "name": "physics-001",
+        "type": "test",
+        "displayName": "Physics Exam: Control Task",
+        "configuration": {
+            "dynamic": false,
+            "timeLimited": true,
+            "questionsCount": 70
+        }
+    }
+]

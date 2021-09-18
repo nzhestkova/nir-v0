@@ -11,6 +11,10 @@ const app = express();
 app.use(compression());
 app.use(express.static(path.join(__dirname, APPLICATION_PATH)));
 
+app.get('/mock-data/*', (req, res) => {
+    res.sendFile(path.join(__dirname, `${APPLICATION_PATH}/index.html`));
+});
+
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, `${APPLICATION_PATH}/index.html`));
 });
