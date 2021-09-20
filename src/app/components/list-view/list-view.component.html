@@ -1,2 +1,68 @@
-<div>
+<div *ngIf="{taskList: taskList$ | async} as observables"
+     class="task-list"
+>
+    <ng-container *ngFor="let task of observables.taskList">
+        <ng-container *ngTemplateOutlet="listViewTemplate; context: {task: task}"></ng-container>
+    </ng-container>
 </div>
+
+<ng-template #listViewTemplate
+             let-task="task">
+    <div class="task-list__item"
+         *ngIf="{visible: false} as parameters"
+    >
+        <mat-card class="task-card"
+                  (click)="parameters.visible = !parameters.visible"
+        >
+            <div class="task-card__list-view">
+                <div [className]="'task-card__list-view__icon ' + (task.type ?? 'default') + '-task-list-icon'"></div>
+                <span class="task-card__list-view__header">{{task.displayName}}</span>
+
+                <div class="task-card__list-view__configuration">
+                    <div class="task-card__list-view__configuration-icon _counter"
+                    >
+                        <span class="task-card__list-view__configuration-counter">{{task.configuration?.questionsCount}}</span>
+                    </div>
+
+                    <div class="task-card__list-view__configuration-icon _timer"
+                         *ngIf="task.configuration?.timeAllowed"
+                    ></div>
+
+                    <div class="task-card__list-view__configuration-icon _due-date"
+                         *ngIf="task.configuration?.dueDate"
+                    ></div>
+                </div>
+
+                <button class="task-card__list-view__run"></button>
+            </div>
+        </mat-card>
+
+        <div class="task-list__item-definition"
+             *ngIf="parameters.visible"
+        >
+            <table class=""
+                   *ngIf="{
+                        dueDate: 'Due to',
+                        timeAllowed: 'Allowed Time',
+                        default: '----'
+                    } as table">
+                <tr>
+                    <td>{{table.dueDate}}</td>
+                    <td>{{task.configuration?.dueDate || table.default}}</td>
+                </tr>
+                <tr>
+                    <td>{{table.timeAllowed}}</td>
+                    <td>{{task.configuration?.timeAllowed || table.default}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</ng-template>
+
+<ng-template #expandedViewTemplate
+             let-task="task">
+        <mat-card>
+            <span>{{task.displayName}}</span>
+            <mat-card-subtitle>{{task.type}}</mat-card-subtitle>
+        </mat-card>
+</ng-template>

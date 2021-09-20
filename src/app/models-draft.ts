@@ -30,7 +30,9 @@ export type TaskConfigurationValue = {
     dynamic?: boolean;
     randomQuestionsOrder?: boolean;
     randomAnswersOrder?: boolean;
-    timeLimited?: boolean;
+    timeAllowed?: string;
+    dueDate?: string;
+    available?: boolean;
     questionsCount?: number;
 };
 

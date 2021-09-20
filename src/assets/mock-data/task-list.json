@@ -6,7 +6,9 @@
         "displayName": "Chemical Exam: Training Task",
         "configuration": {
             "dynamic": false,
-            "timeLimited": false,
+            "timeLimited": true,
+            "timeAllowed": "1h",
+            "dueDate": "2021-10-12",
             "questionsCount": 15
         }
     },
@@ -17,7 +19,7 @@
         "displayName": "Physics Exam: Control Task",
         "configuration": {
             "dynamic": false,
-            "timeLimited": true,
+            "dueDate": "2021-10-12",
             "questionsCount": 70
         }
     }

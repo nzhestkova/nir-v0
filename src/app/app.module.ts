@@ -11,12 +11,17 @@ import {MatCardModule} from '@angular/material/card';
 import { ListViewComponent } from './components/list-view/list-view.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { TaskResultComponent } from './components/task-result/task-result.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
     declarations: [
         AppComponent,
         MainPageComponent,
-        ListViewComponent
+        ListViewComponent,
+        TaskResultComponent
     ],
     imports: [
         BrowserModule,
@@ -25,7 +30,10 @@ import {MatButtonModule} from '@angular/material/button';
         HttpClientModule,
         MatCardModule,
         MatIconModule,
-        MatButtonModule
+        MatButtonModule,
+        MatGridListModule,
+        MatButtonToggleModule,
+        MatTableModule
     ],
     providers: [
         MockServerApiService,
