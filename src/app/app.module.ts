@@ -15,13 +15,15 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { TaskResultComponent } from './components/task-result/task-result.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatTableModule} from '@angular/material/table';
+import { DueDateComponent } from './components/due-date/due-date.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         MainPageComponent,
         ListViewComponent,
-        TaskResultComponent
+        TaskResultComponent,
+        DueDateComponent
     ],
     imports: [
         BrowserModule,

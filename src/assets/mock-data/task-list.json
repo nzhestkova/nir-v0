@@ -8,7 +8,7 @@
             "dynamic": false,
             "timeLimited": true,
             "timeAllowed": "1h",
-            "dueDate": "2021-10-12",
+            "dueDate": "2021-10-20T17:47:52",
             "questionsCount": 15
         }
     },
@@ -19,8 +19,20 @@
         "displayName": "Physics Exam: Control Task",
         "configuration": {
             "dynamic": false,
-            "dueDate": "2021-10-12",
+            "dueDate": "2021-09-21T00:00:00",
             "questionsCount": 70
+        }
+    },
+    {
+        "id": "3f0bd3e6-584e-4e81-93ae-37d00a1a9cb7",
+        "name": "math-001",
+        "type": "test",
+        "displayName": "Math Exam: Control Task",
+        "configuration": {
+            "dynamic": false,
+            "dueDate": "2021-09-21T22:00:00",
+            "timeAllowed": "4h",
+            "questionsCount": 100
         }
     }
 ]

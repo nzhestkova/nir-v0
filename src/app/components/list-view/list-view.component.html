@@ -9,10 +9,10 @@
 <ng-template #listViewTemplate
              let-task="task">
     <div class="task-list__item"
-         *ngIf="{visible: false} as parameters"
+         *ngIf="{visible: openedTask?.id === task.id} as parameters"
     >
         <mat-card class="task-card"
-                  (click)="parameters.visible = !parameters.visible"
+                  (click)="onTaskClick(task, parameters.visible)"
         >
             <div class="task-card__list-view">
                 <div [className]="'task-card__list-view__icon ' + (task.type ?? 'default') + '-task-list-icon'"></div>
@@ -42,13 +42,20 @@
         >
             <table class=""
                    *ngIf="{
-                        dueDate: 'Due to',
+                        dueDate: 'Due Date',
                         timeAllowed: 'Allowed Time',
                         default: '----'
                     } as table">
                 <tr>
                     <td>{{table.dueDate}}</td>
-                    <td>{{task.configuration?.dueDate || table.default}}</td>
+                    <td>
+                        <span>{{(task.configuration?.dueDate | date: 'dd MMM yyyy') || table.default}}</span>
+                        <span> · </span>
+                        <custom-due-date
+                                [dueDate]="task.configuration?.dueDate"
+                                *ngIf="task.configuration?.dueDate"
+                        ></custom-due-date>
+                    </td>
                 </tr>
                 <tr>
                     <td>{{table.timeAllowed}}</td>
