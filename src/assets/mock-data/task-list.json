@@ -1,0 +1,38 @@
+[
+    {
+        "id": "5f8e038b-3c33-4e9f-b0d5-17206c9a3705",
+        "name": "chemical-001",
+        "type": "test",
+        "displayName": "Chemical Exam: Training Task",
+        "configuration": {
+            "dynamic": false,
+            "timeLimited": true,
+            "timeAllowed": "1h",
+            "dueDate": "2021-10-20T17:47:52",
+            "questionsCount": 15
+        }
+    },
+    {
+        "id": "f4f12ef6-4729-48ca-a846-6f579a975fdc",
+        "name": "physics-001",
+        "type": "test",
+        "displayName": "Physics Exam: Control Task",
+        "configuration": {
+            "dynamic": false,
+            "dueDate": "2021-09-21T00:00:00",
+            "questionsCount": 70
+        }
+    },
+    {
+        "id": "3f0bd3e6-584e-4e81-93ae-37d00a1a9cb7",
+        "name": "math-001",
+        "type": "test",
+        "displayName": "Math Exam: Control Task",
+        "configuration": {
+            "dynamic": false,
+            "dueDate": "2021-09-21T22:00:00",
+            "timeAllowed": "4h",
+            "questionsCount": 100
+        }
+    }
+]

@@ -1,0 +1,95 @@
+@import "../../../assets/icons/icons.less";
+@import "../../../assets/style/colors.less";
+
+:host {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.main-route {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-header {
+      text-align: center;
+    }
+
+    &-options {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      &-item {
+        padding: 20px;
+        background-color: @white;
+        position: relative;
+
+        transition: box-shadow .2s ease-in;
+        border-radius: 4px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          background-color: #fbfbfbc9;
+          border-radius: 4px;
+        }
+
+        &:not(:last-child) {
+          margin-right: 16px;
+        }
+
+        &._active {
+          cursor: pointer;
+          box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+                      0 1px 1px 0 rgb(0 0 0 / 14%),
+                      0 1px 3px 0 rgb(0 0 0 / 12%);
+
+          &::after {
+            display: none;
+          }
+
+          &:hover {
+            box-shadow: 0 2px 8px -1px rgb(0 0 0 / 20%),
+            0 2px 8px 0 rgb(0 0 0 / 14%),
+            0 2px 8px 0 rgb(0 0 0 / 12%);
+          }
+        }
+
+        &-title {
+          padding: 16px 0 0 0;
+          font-size: 16px;
+          font-weight: 100;
+          text-align: center;
+        }
+
+        &-icon {
+          width: 100px;
+          height: 100px;
+
+          &._task-list {
+            .task-list-icon;
+          }
+
+          &._task-result {
+            .task-result-icon;
+          }
+
+          &._task-editor {
+            .task-editor-icon;
+          }
+        }
+      }
+    }
+  }
+}

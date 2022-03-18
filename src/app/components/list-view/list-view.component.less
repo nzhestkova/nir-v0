@@ -1,0 +1,113 @@
+@import "../../../assets/icons/icons.less";
+@import "../../../assets/style/colors.less";
+
+.task-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 100px 40px 0 40px;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &-definition {
+      margin: 10px;
+      padding: 10px;
+
+      border-radius: 4px;
+      background-color: @white;
+      box-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+                  0 1px 1px 0 rgb(0 0 0 / 14%),
+                  0 1px 3px 0 rgb(0 0 0 / 12%);
+
+      & td {
+        font-weight: 100;
+        padding-right: 24px;
+      }
+    }
+  }
+}
+
+.task-card {
+  flex: 1;
+  cursor: pointer;
+
+  &__list-view {
+    display: flex;
+
+    &__icon {
+      margin-right: 16px;
+    }
+
+    &__header {
+      flex: 2;
+      font-size: 16px;
+      font-weight: 450;
+      line-height: 24px;
+    }
+
+    &__configuration {
+      display: flex;
+      flex: 1;
+      padding-left: 2px;
+
+      &-counter {
+        font-size: 14px;
+        line-height: 24px;
+        position: absolute;
+        right: 16px;
+        padding: 0 4px;
+        color: @grey;
+        background-color: @white;
+      }
+
+      &-icon {
+        height: 22px;
+        width: 22px;
+        position: relative;
+
+        &:not(:first-child) {
+          margin-left: 12px;
+        }
+
+        &._counter {
+          .task-counter-icon;
+        }
+
+        &._timer {
+          .timer-icon;
+        }
+
+        &._due-date {
+          .due-date-icon;
+        }
+      }
+    }
+
+    &__run {
+      background-color: @white;
+      border-color: @blue;
+      border-style: solid;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      margin: -2px 0;
+      cursor: pointer;
+      .run-icon;
+    }
+  }
+}
+
+.test-task-list-icon {
+  height: 24px;
+  width: 24px;
+  color: green;
+  .test-task-icon;
+}

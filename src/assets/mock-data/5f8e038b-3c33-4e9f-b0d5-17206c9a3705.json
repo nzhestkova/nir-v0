@@ -1,0 +1,40 @@
+{
+    "id": "5f8e038b-3c33-4e9f-b0d5-17206c9a3705",
+    "name": "chemical-001",
+    "displayName": "Chemical Exam: Training Task",
+    "configuration": {
+        "dynamic": false,
+        "timeLimited": true,
+        "questionsCount": 1
+    },
+    "questionSet": [
+        {
+            "id": "940f75d5-a3d7-481f-86b1-022864999c6b",
+            "type": "single",
+            "text": "Determine which of the specified elements at the outer level contain more s-electrons than p-electrons (in the ground state)",
+            "category": "chemical-common",
+            "answerOptions": [
+                {
+                    "id": "901761ad-17df-4b90-b7fe-8e736f02f335",
+                    "text": "H"
+                },
+                {
+                    "id": "488ee6f7-4062-4a57-9d67-0f26c7b84a49",
+                    "text": "C"
+                },
+                {
+                    "id": "6da532a0-ac06-4d7f-acc2-136fcde7dd1c",
+                    "text": "F"
+                },
+                {
+                    "id": "3c14a354-a5b9-4198-a91f-0b2616b4a081",
+                    "text": "Be"
+                },
+                {
+                    "id": "2e5efbec-b12c-4249-b9a8-42a58bceb8f2",
+                    "text": "P"
+                }
+            ]
+        }
+    ]
+}

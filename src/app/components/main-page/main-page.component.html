@@ -1,0 +1,30 @@
+<div class="main-route" *ngIf="{
+        chooseMockUp: 'Choose component'
+    } as textKeys"
+>
+    <div class="main-route__content">
+        <h2 class="main-route__content-header">{{textKeys.chooseMockUp}}</h2>
+        <div class="main-route__content-options">
+            <ng-container *ngFor="let tile of tilesList">
+                <ng-container *ngTemplateOutlet="tileTemplate; context: tile"></ng-container>
+            </ng-container>
+        </div>
+    </div>
+</div>
+
+<ng-template #tileTemplate
+             let-link="link"
+             let-iconName="iconName"
+             let-title="title"
+             let-active="active"
+>
+    <div class="main-route__content-options-item"
+         [class._active]="active"
+         [routerLink]="active && link"
+    >
+        <div [className]="'main-route__content-options-item-icon _' + iconName"></div>
+        <div class="main-route__content-options-item-title">
+            {{title}}
+        </div>
+    </div>
+</ng-template>
